@@ -15,4 +15,6 @@ struct Constants {
 	static let BAR_BUTTON_IMAGE_pause: String = "pause.fill"
 
 	static let SEGUE_ID: String = "tapImageSegue"
+
+	static let REPLACE_SYSTEM_IMAGE: String = "clear"
 }

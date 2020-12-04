@@ -15,6 +15,7 @@
 		2F112B3E257A7B6C00204F55 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F112B3D257A7B6C00204F55 /* SlideViewController.swift */; };
 		2F112B40257A7C1C00204F55 /* ExpansionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F112B3F257A7C1C00204F55 /* ExpansionViewController.swift */; };
 		2F112B42257A91B000204F55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F112B41257A91B000204F55 /* Constants.swift */; };
+		2F112B44257ACF9B00204F55 /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F112B43257ACF9B00204F55 /* SlideModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2F112B3D257A7B6C00204F55 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		2F112B3F257A7C1C00204F55 /* ExpansionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionViewController.swift; sourceTree = "<group>"; };
 		2F112B41257A91B000204F55 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2F112B43257ACF9B00204F55 /* SlideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		2F112B2E257A737500204F55 /* Model  */ = {
 			isa = PBXGroup;
 			children = (
+				2F112B43257ACF9B00204F55 /* SlideModel.swift */,
 			);
 			path = "Model ";
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				2F112B42257A91B000204F55 /* Constants.swift in Sources */,
 				2F112B40257A7C1C00204F55 /* ExpansionViewController.swift in Sources */,
 				2F112B3E257A7B6C00204F55 /* SlideViewController.swift in Sources */,
+				2F112B44257ACF9B00204F55 /* SlideModel.swift in Sources */,
 				2F112B182579ED7B00204F55 /* AppDelegate.swift in Sources */,
 				2F112B1A2579ED7B00204F55 /* SceneDelegate.swift in Sources */,
 			);
