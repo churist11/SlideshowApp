@@ -13,9 +13,6 @@
 		2F112B1F2579ED7B00204F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F112B1D2579ED7B00204F55 /* Main.storyboard */; };
 		2F112B212579ED7F00204F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F112B202579ED7F00204F55 /* Assets.xcassets */; };
 		2F112B242579ED8000204F55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F112B222579ED8000204F55 /* LaunchScreen.storyboard */; };
-		2F112B38257A776300204F55 /* hams2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F112B35257A776300204F55 /* hams2.jpg */; };
-		2F112B39257A776300204F55 /* hams3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F112B36257A776300204F55 /* hams3.jpg */; };
-		2F112B3A257A776300204F55 /* hams1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2F112B37257A776300204F55 /* hams1.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +24,6 @@
 		2F112B202579ED7F00204F55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F112B232579ED8000204F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F112B252579ED8000204F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F112B35257A776300204F55 /* hams2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hams2.jpg; sourceTree = "<group>"; };
-		2F112B36257A776300204F55 /* hams3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hams3.jpg; sourceTree = "<group>"; };
-		2F112B37257A776300204F55 /* hams1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hams1.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +62,6 @@
 				2F112B172579ED7B00204F55 /* AppDelegate.swift */,
 				2F112B192579ED7B00204F55 /* SceneDelegate.swift */,
 				2F112B222579ED8000204F55 /* LaunchScreen.storyboard */,
-				2F112B32257A746300204F55 /* Images */,
 				2F112B202579ED7F00204F55 /* Assets.xcassets */,
 				2F112B252579ED8000204F55 /* Info.plist */,
 			);
@@ -96,16 +89,6 @@
 				2F112B1B2579ED7B00204F55 /* ViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		2F112B32257A746300204F55 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				2F112B37257A776300204F55 /* hams1.jpeg */,
-				2F112B35257A776300204F55 /* hams2.jpg */,
-				2F112B36257A776300204F55 /* hams3.jpg */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,10 +151,7 @@
 			files = (
 				2F112B242579ED8000204F55 /* LaunchScreen.storyboard in Resources */,
 				2F112B212579ED7F00204F55 /* Assets.xcassets in Resources */,
-				2F112B3A257A776300204F55 /* hams1.jpeg in Resources */,
 				2F112B1F2579ED7B00204F55 /* Main.storyboard in Resources */,
-				2F112B39257A776300204F55 /* hams3.jpg in Resources */,
-				2F112B38257A776300204F55 /* hams2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
