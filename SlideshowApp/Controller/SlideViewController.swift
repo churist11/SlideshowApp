@@ -10,20 +10,34 @@ import UIKit
 
 class SlideViewController: UIViewController {
 
+	// MARK: - IBOutlet
+	@IBOutlet weak var imageView: UIImageView!
+	@IBOutlet weak var tapGesture: UITapGestureRecognizer!
+
+	// MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		// Allocate self method to gesture
+		self.tapGesture.addTarget(self, action: #selector(Test))
     }
-    
 
-    /*
+	// MARK: - IBAction
+
+
+	// MARK: - Instance Method
+
+	// FIXME: - Test for gesture segue
+	@objc func Test() -> Void {
+		print("Tapped!")
+	}
+
+
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
     }
-    */
 
 }// End
