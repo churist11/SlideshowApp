@@ -8,7 +8,7 @@
 
 import UIKit
 // From SlideViewController, When user tapped image view.
-class ExpansionViewController: UIViewController {
+final class ExpansionViewController: UIViewController {
 
 	// MARK: - IBOutlet
 

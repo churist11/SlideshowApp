@@ -17,4 +17,6 @@ struct Constants {
 	static let SEGUE_ID: String = "tapImageSegue"
 
 	static let REPLACE_SYSTEM_IMAGE: String = "clear"
+
+	static let NAME_OF_DIRECTORY_OF_IMAGE: String = "/Images"
 }
