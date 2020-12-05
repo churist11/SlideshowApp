@@ -13,6 +13,9 @@ final class SlideViewController: UIViewController {
 	// MARK: - IBOutlet
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var pageControl: UIPageControl!
+	@IBOutlet weak var previousButton: UIBarButtonItem!
+	@IBOutlet weak var nextButton: UIBarButtonItem!
+
 
 	@IBOutlet weak var tapGesture: UITapGestureRecognizer!
 
@@ -38,26 +41,26 @@ final class SlideViewController: UIViewController {
 	// MARK: - IBAction
 	@IBAction func previousTapped(_ sender: UIBarButtonItem) {
 
-		// Turn into last page
+		// Turn into last page from first page
 		if self.pageControl.currentPage == 0 {
 
 			self.pageControl.currentPage = self.pageControl.numberOfPages - 1
 
 		} else {
-
+			// Normally back 1 page
 			self.pageControl.currentPage -= 1
 		}
 	}
 
 	@IBAction func nextTapped(_ sender: UIBarButtonItem) {
 
-		// Turn into first page
+		// Turn into first page from last page
 		if self.pageControl.currentPage == self.pageControl.numberOfPages - 1 {
 
 			self.pageControl.currentPage = 0
 
 		} else {
-
+			// Normally go 1 page
 			self.pageControl.currentPage += 1
 		}
 	}
@@ -69,6 +72,23 @@ final class SlideViewController: UIViewController {
 
 		// Change status
 		self.isPlaying = !(self.isPlaying)
+
+		// Determine how Slide moves
+		if self.isPlaying {
+
+			// TODO: - Auto slideshow starts , that display each slide every 2sec
+
+			// Disable to tap side buttons
+			self.previousButton.isEnabled = false
+			self.nextButton.isEnabled = false
+		} else {
+			
+			// TODO: - Stop Slideshow and hold current slide to screen
+
+			// Enable to tap side buttons
+			self.previousButton.isEnabled = true
+			self.nextButton.isEnabled = true
+		}
 	}
 
 	// MARK: - Instance Method

@@ -11,15 +11,11 @@ import UIKit
 struct SlideModel {
 
 	// MARK: - Stored Property
-
 	internal var slideContainer = [Slide]()
 	private var currentIndex: Int = 0
-
 	private var imageNameContainer = [String]()
 
-
 	// MARK: - Computed Property
-
 	internal var numberOfImages: Int {
 		get {
 			return self.imageNameContainer.count

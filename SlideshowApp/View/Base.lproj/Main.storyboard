@@ -79,7 +79,9 @@
                     <navigationItem key="navigationItem" id="o0t-tP-YuE"/>
                     <connections>
                         <outlet property="imageView" destination="b9G-Wg-2EJ" id="luQ-yK-LjQ"/>
+                        <outlet property="nextButton" destination="FzG-Tr-d35" id="CjJ-up-b7W"/>
                         <outlet property="pageControl" destination="dem-fQ-npo" id="EIX-sT-3bR"/>
+                        <outlet property="previousButton" destination="jq5-VJ-Yof" id="CG1-iW-2qc"/>
                         <outlet property="tapGesture" destination="BJO-ez-Hdr" id="RK4-xp-0FT"/>
                     </connections>
                 </viewController>
