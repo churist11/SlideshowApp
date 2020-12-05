@@ -12,31 +12,47 @@ struct SlideModel {
 
 	// MARK: - Stored Property
 
-	// 0 - 2
-	internal var slideIndexNum: Int
+	// Same number to slide page index
+	internal var currentImageIndex: Int
 
 	// MARK: - Computed Property
 
-	internal var title: String {
-		return "hams\(self.slideIndexNum + 1)"
+	private var imageNameContainer: [String] {
+		get {
+			// Access file
+			let fileManager = FileManager.default
+			let imagePath = Bundle.main.resourcePath! + "/Images"
+
+			// Get name of files in directory
+			let imagefileNames = try! fileManager.contentsOfDirectory(atPath: imagePath)
+
+			return imagefileNames
+		}
 	}
 
-	internal var image: UIImage {
+	internal var currentImageName: String {
+
+		// Return name of the image file
+		return self.imageNameContainer[currentImageIndex]
+	}
+
+	internal var currentImage: UIImage {
 		get {
-			// Initialize specified name image in assets
-			if let image = UIImage(named: self.title, in: Bundle.main, with: .none) {
+			// Initialize image object with specified name
+			if let image = UIImage(named: self.currentImageName, in: Bundle.main, with: .none) {
 
 				return image
-
 			} else {
+
+				// If image fetching failed, assign system image to the image view
 				return UIImage(systemName: Constants.REPLACE_SYSTEM_IMAGE)!
 			}
 		}
 	}
 
 	// MARK: -  Initializer
-	init(number: Int) {
-		self.slideIndexNum = number
+	init(indexNum: Int) {
+		self.currentImageIndex = indexNum
 	}
 
 }//End

@@ -14,12 +14,18 @@ class SlideViewController: UIViewController {
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var tapGesture: UITapGestureRecognizer!
 
+	// MARK: - Property
+	private var model: SlideModel?
+
+
 	// MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		
 		// Allocate self method to gesture
 		self.tapGesture.addTarget(self, action: #selector(Test))
+
+		// TODO: -  Set initial image to the image view
     }
 
 	// MARK: - IBAction

@@ -16,6 +16,7 @@
 		2F112B40257A7C1C00204F55 /* ExpansionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F112B3F257A7C1C00204F55 /* ExpansionViewController.swift */; };
 		2F112B42257A91B000204F55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F112B41257A91B000204F55 /* Constants.swift */; };
 		2F112B44257ACF9B00204F55 /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F112B43257ACF9B00204F55 /* SlideModel.swift */; };
+		2F112B48257B63A500204F55 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 2F112B47257B63A500204F55 /* Images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		2F112B3F257A7C1C00204F55 /* ExpansionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionViewController.swift; sourceTree = "<group>"; };
 		2F112B41257A91B000204F55 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2F112B43257ACF9B00204F55 /* SlideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
+		2F112B47257B63A500204F55 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../../../../.Trash/Images; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				2F112B222579ED8000204F55 /* LaunchScreen.storyboard */,
 				2F112B202579ED7F00204F55 /* Assets.xcassets */,
 				2F112B252579ED8000204F55 /* Info.plist */,
+				2F112B47257B63A500204F55 /* Images */,
 				2F112B41257A91B000204F55 /* Constants.swift */,
 			);
 			path = SlideshowApp;
@@ -158,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F112B48257B63A500204F55 /* Images in Resources */,
 				2F112B242579ED8000204F55 /* LaunchScreen.storyboard in Resources */,
 				2F112B212579ED7F00204F55 /* Assets.xcassets in Resources */,
 				2F112B1F2579ED7B00204F55 /* Main.storyboard in Resources */,
