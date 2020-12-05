@@ -15,8 +15,10 @@ class ExpansionViewController: UIViewController {
 	@IBOutlet weak var expansionImageVIew: UIImageView!
 
 	// MARK: - Property
-	private var model: SlideModel?
+//	internal var expansionImage: UIImage?
+//	internal var expansionTitle: String?
 
+	// MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
 		// TODO: - Uncomment following codes

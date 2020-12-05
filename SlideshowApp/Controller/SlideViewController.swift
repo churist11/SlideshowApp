@@ -17,7 +17,6 @@ class SlideViewController: UIViewController {
 	// MARK: - Property
 	private var model: SlideModel?
 
-
 	// MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,7 @@ class SlideViewController: UIViewController {
 		// Allocate self method to gesture
 		self.tapGesture.addTarget(self, action: #selector(Test))
 
-		// TODO: -  Set initial image to the image view
+		// Set initial image to the image view
     }
 
 	// MARK: - IBAction
