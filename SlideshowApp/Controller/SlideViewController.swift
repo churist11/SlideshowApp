@@ -17,7 +17,7 @@ final class SlideViewController: UIViewController {
 	@IBOutlet weak var tapGesture: UITapGestureRecognizer!
 
 	// MARK: - Property
-	private var model: SlideModel?
+	private var model = SlideModel()
 
 	private var isPlaying: Bool = false
 
@@ -25,25 +25,41 @@ final class SlideViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		// Initialize SlideModel
-		self.model = SlideModel(indexNum: self.pageControl.currentPage)
+		// Configure page control status
+		self.pageControl.numberOfPages = self.model.numberOfImages
+		self.pageControl.currentPage = 0
 
 		// Set initial image to the image view
-		self.imageView.image = self.model?.currentImage
+		self.imageView.image = self.model.slideContainer[self.pageControl.currentPage].image
 
-		self.navigationItem.title = self.model?.imageTitle
-
+		self.navigationItem.title = self.model.slideContainer[self.pageControl.currentPage].title
     }
 
 	// MARK: - IBAction
 	@IBAction func previousTapped(_ sender: UIBarButtonItem) {
 
-		print("previous!!")
+		// Turn into last page
+		if self.pageControl.currentPage == 0 {
 
+			self.pageControl.currentPage = self.pageControl.numberOfPages - 1
+
+		} else {
+
+			self.pageControl.currentPage -= 1
+		}
 	}
 
 	@IBAction func nextTapped(_ sender: UIBarButtonItem) {
-		
+
+		// Turn into first page
+		if self.pageControl.currentPage == self.pageControl.numberOfPages - 1 {
+
+			self.pageControl.currentPage = 0
+
+		} else {
+
+			self.pageControl.currentPage += 1
+		}
 	}
 
 	@IBAction func playTapped(_ sender: UIBarButtonItem) {

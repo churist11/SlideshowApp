@@ -12,40 +12,43 @@ struct SlideModel {
 
 	// MARK: - Stored Property
 
-	private var imageNameContainer: [String]?
+	internal var slideContainer = [Slide]()
+	private var currentIndex: Int = 0
 
-	// Same number to slide page index
-	private var currentImageIndex: Int
+	private var imageNameContainer = [String]()
+
 
 	// MARK: - Computed Property
 
-	private var imagePath: String? {
+	internal var numberOfImages: Int {
+		get {
+			return self.imageNameContainer.count
+		}
+	}
 
-		// Return processed name of the image file ex. "babyHam"
-		if let text = self.imageNameContainer?[currentImageIndex] {
+	private var imagePath: String {
+		get {
+			// Return processed name of the image file ex. "babyHam"
+			let text = self.imageNameContainer[currentIndex]
 
 			let processedText = text.prefix(text.count - 4)
 
 			return "Images/" + String(processedText)
-		} else {
-			return nil
 		}
 	}
 
-	internal var imageTitle: String? {
-
-		// Return processed name of the image file ex. "babyHam"
-		if let text = self.imageNameContainer?[currentImageIndex] {
+	private var imageTitle: String {
+		get {
+			// Return processed name of the image file ex. "babyHam"
+			let text = self.imageNameContainer[currentIndex]
 
 			let processedText = text.prefix(text.count - 4)
 
 			return String(processedText)
-		} else {
-			return nil
 		}
 	}
 
-	internal var currentImage: UIImage? {
+	private var currentImage: UIImage! {
 		get {
 			// Initialize image object with specified name
 			if let path = Bundle.main.path(forResource: self.imagePath, ofType: "jpg") {
@@ -59,21 +62,31 @@ struct SlideModel {
 	}
 
 	// MARK: -  Initializer
-	init(indexNum: Int) {
-
-		// Assign given value
-		self.currentImageIndex = indexNum
+	init() {
 
 		// Access file in bundle
 		let fileManager = FileManager.default
 		let imagePath = Bundle.main.resourcePath! + Constants.NAME_OF_DIRECTORY_OF_IMAGE
 
 		// Get name of files in directory
-		if let imagefileNames = try? fileManager.contentsOfDirectory(atPath: imagePath) {
+		let imagefileNames = try! fileManager.contentsOfDirectory(atPath: imagePath)
 
-			//Assign value to the container
-			self.imageNameContainer = imagefileNames
+		//Assign value to the container
+		self.imageNameContainer = imagefileNames
+
+		// Prepare slides for container
+		for i in 0 ..< self.numberOfImages {
+
+			// Assign each page number
+			self.currentIndex = i
+
+			// Initialize slide for specified page
+			let slide = Slide(page: i, title: self.imageTitle, image: self.currentImage)
+
+			// Add to container
+			self.slideContainer.append(slide)
 		}
 	}
+
 
 }//End
