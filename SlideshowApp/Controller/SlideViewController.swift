@@ -17,6 +17,7 @@ final class SlideViewController: UIViewController {
 	@IBOutlet weak var pageControl: UIPageControl!
 	@IBOutlet weak var previousButton: UIBarButtonItem!
 	@IBOutlet weak var nextButton: UIBarButtonItem!
+	@IBOutlet weak var playButton: UIBarButtonItem!
 
 
 	// MARK: - Property
@@ -186,6 +187,11 @@ final class SlideViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+		// Stop slideshow already running
+		if self.isPlaying {
+			self.playTapped(playButton)
+		}
 
 		// Confirm segue id
 		if segue.identifier == Constants.SEGUE_ID {
