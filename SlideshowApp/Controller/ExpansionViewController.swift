@@ -13,24 +13,45 @@ final class ExpansionViewController: UIViewController {
 	// MARK: - IBOutlet
 
 	@IBOutlet weak var expansionImageVIew: UIImageView!
+	@IBOutlet weak var infoView: UIView!
+	@IBOutlet weak var infoLabel: UILabel!
 
 	// MARK: - Property
-//	internal var expansionImage: UIImage?
-//	internal var expansionTitle: String?
+
+	internal var slide: Slide?
 
 	// MARK: - LifeCycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
-		// TODO: - Uncomment following codes
-//
-//		// Set values with model that created in former VC
-//		self.expansionImageVIew.image = self.model?.image
-//		self.navigationItem.title = self.model?.title
-//
 
+		// Set UI with values in slide that created in former VC
+//		self.expansionImageVIew.image = self.slide?.image
+//		self.navigationItem.title = self.slide?.title
+
+		// Close info view
+		self.infoView.isHidden = true
 	}
+
 	@IBAction func infoPressed(_ sender: UIBarButtonItem) {
 
+		// Animate
+		UIView.transition(with: self.infoView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+
+			// Open info View
+			self.infoView.isHidden = false
+
+		}, completion: nil)
 	}
-	
+
+	@IBAction func closePressed(_ sender: UIButton) {
+
+		// Animate
+		UIView.transition(with: self.infoView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+
+			// Close info view
+			self.infoView.isHidden = true
+
+		}, completion: nil)
+	}
+
 }// End
