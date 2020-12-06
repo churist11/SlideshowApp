@@ -13,6 +13,8 @@ final class ExpansionViewController: UIViewController {
 	// MARK: - IBOutlet
 
 	@IBOutlet weak var expansionImageVIew: UIImageView!
+	@IBOutlet weak var closeButton: UIButton!
+
 	@IBOutlet weak var infoView: UIView!
 	@IBOutlet weak var infoLabel: UILabel!
 
@@ -28,8 +30,9 @@ final class ExpansionViewController: UIViewController {
 		self.expansionImageVIew.image = self.slide?.image ?? UIImage(systemName: Constants.REPLACE_SYSTEM_IMAGE)
 		self.navigationItem.title = self.slide?.title ?? "NIL"
 
-		// Hide info view
+		// Hide info view and button
 		self.infoView.isHidden = true
+		self.closeButton.isHidden = true
 
 		// Place info text in label
 		self.infoLabel.text = self.slide?.imageInfo
@@ -44,6 +47,14 @@ final class ExpansionViewController: UIViewController {
 			self.infoView.isHidden = false
 
 		}, completion: nil)
+
+		UIView.transition(with: self.closeButton, duration: 0.5, options: .transitionCrossDissolve, animations: {
+
+			// Open info View
+			self.closeButton.isHidden = false
+
+		}, completion: nil)
+
 	}
 
 	@IBAction func closePressed(_ sender: UIButton) {
@@ -53,6 +64,13 @@ final class ExpansionViewController: UIViewController {
 
 			// Close info view
 			self.infoView.isHidden = true
+
+		}, completion: nil)
+
+		UIView.transition(with: self.closeButton, duration: 0.5, options: .transitionCrossDissolve, animations: {
+
+			// Close info view
+			self.closeButton.isHidden = true
 
 		}, completion: nil)
 	}

@@ -148,37 +148,37 @@
                                         <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwZ-hF-o52">
-                                        <rect key="frame" x="326" y="9" width="40" height="37.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="Ftt-WL-QlS"/>
-                                            <constraint firstAttribute="height" constant="40" id="cNb-xb-kzd"/>
-                                            <constraint firstAttribute="width" secondItem="LwZ-hF-o52" secondAttribute="height" multiplier="40:40" id="uE8-Yu-9GA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" backgroundImage="clear" catalog="system"/>
-                                        <connections>
-                                            <action selector="closePressed:" destination="Xx2-lG-GgT" eventType="touchUpInside" id="Hgd-Tu-QsR"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.68417390447941762" green="0.18202868867110497" blue="0.9131503807106599" alpha="0.45558647260273971" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="LwZ-hF-o52" firstAttribute="trailing" secondItem="Ny4-cQ-mNH" secondAttribute="trailingMargin" id="6hM-kc-im6"/>
                                     <constraint firstItem="XuX-UY-VD6" firstAttribute="centerX" secondItem="Ny4-cQ-mNH" secondAttribute="centerX" id="ChZ-t6-yg8"/>
-                                    <constraint firstItem="LwZ-hF-o52" firstAttribute="top" secondItem="Ny4-cQ-mNH" secondAttribute="topMargin" id="Oad-QK-dtO"/>
                                     <constraint firstItem="XuX-UY-VD6" firstAttribute="centerY" secondItem="Ny4-cQ-mNH" secondAttribute="centerY" id="lZ9-Ru-M46"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwZ-hF-o52">
+                                <rect key="frame" x="344" y="687" width="50" height="47.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Ftt-WL-QlS"/>
+                                    <constraint firstAttribute="height" constant="50" id="cNb-xb-kzd"/>
+                                    <constraint firstAttribute="width" secondItem="LwZ-hF-o52" secondAttribute="height" multiplier="50:50" id="uE8-Yu-9GA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" backgroundImage="clear" catalog="system"/>
+                                <connections>
+                                    <action selector="closePressed:" destination="Xx2-lG-GgT" eventType="touchUpInside" id="Hgd-Tu-QsR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ny4-cQ-mNH" firstAttribute="leading" secondItem="zEz-Os-Pca" secondAttribute="leading" constant="20" id="CHf-1F-pwl"/>
                             <constraint firstItem="Ny4-cQ-mNH" firstAttribute="height" secondItem="Vjx-Q0-B2d" secondAttribute="height" multiplier="0.15" id="Esf-yE-Hqi"/>
+                            <constraint firstItem="Ny4-cQ-mNH" firstAttribute="top" secondItem="LwZ-hF-o52" secondAttribute="bottom" id="IBu-DS-P9T"/>
                             <constraint firstItem="Vjx-Q0-B2d" firstAttribute="top" secondItem="zEz-Os-Pca" secondAttribute="top" id="SCA-wO-luH"/>
                             <constraint firstItem="Vjx-Q0-B2d" firstAttribute="leading" secondItem="zEz-Os-Pca" secondAttribute="leading" id="ZqI-SO-Tg0"/>
                             <constraint firstItem="Vjx-Q0-B2d" firstAttribute="trailing" secondItem="zEz-Os-Pca" secondAttribute="trailing" id="jb2-cg-fAI"/>
                             <constraint firstItem="Vjx-Q0-B2d" firstAttribute="bottom" secondItem="zEz-Os-Pca" secondAttribute="bottom" id="jxn-nf-R2X"/>
+                            <constraint firstItem="LwZ-hF-o52" firstAttribute="trailing" secondItem="Ny4-cQ-mNH" secondAttribute="trailing" id="kLu-7o-QAh"/>
                             <constraint firstItem="zEz-Os-Pca" firstAttribute="trailing" secondItem="Ny4-cQ-mNH" secondAttribute="trailing" constant="20" id="m76-rc-mMx"/>
                             <constraint firstItem="Ny4-cQ-mNH" firstAttribute="bottom" secondItem="zEz-Os-Pca" secondAttribute="bottom" constant="-10" id="vgc-41-qY0"/>
                         </constraints>
@@ -193,6 +193,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="closeButton" destination="LwZ-hF-o52" id="pfi-0G-17H"/>
                         <outlet property="expansionImageVIew" destination="Vjx-Q0-B2d" id="ypv-Rs-hBb"/>
                         <outlet property="infoLabel" destination="XuX-UY-VD6" id="Vfs-uY-d7d"/>
                         <outlet property="infoView" destination="Ny4-cQ-mNH" id="YhK-cN-zvI"/>
