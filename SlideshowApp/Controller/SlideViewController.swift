@@ -19,20 +19,32 @@ final class SlideViewController: UIViewController {
 	@IBOutlet weak var nextButton: UIBarButtonItem!
 
 
-	@IBOutlet weak var tapGesture: UITapGestureRecognizer!
-
-
 	// MARK: - Property
 
 	private var model = SlideModel()
 	private var timer: Timer?
 	private var isPlaying: Bool = false
 
+	private var swipeGestures = [UISwipeGestureRecognizer]()
+
 
 	// MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+		// Create swipe gestures
+		let swipeFromLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.previousTapped(_:)))
+		swipeFromLeft.direction = .right
+		let swipeFromRight = UISwipeGestureRecognizer(target: self, action: #selector(self.nextTapped(_:)))
+		swipeFromRight.direction = .left
+
+		// Store into gesture array
+		self.swipeGestures.append(contentsOf: [swipeFromLeft,  swipeFromRight])
+
+		// Register recognizer
+		self.imageView.addGestureRecognizer(swipeFromLeft)
+		self.imageView.addGestureRecognizer(swipeFromRight)
 
 		// Configure page control status
 		self.pageControl.numberOfPages = self.model.numberOfSlides
@@ -55,7 +67,12 @@ final class SlideViewController: UIViewController {
 
 	@IBAction func previousTapped(_ sender: UIBarButtonItem) {
 
-		// Turn into last page from first page
+		// Avoid execute while playing slideshow
+		guard !(self.isPlaying) else {
+			return
+		}
+
+		// When reach edge page, last page from first page
 		if self.pageControl.currentPage == 0 {
 
 			self.pageControl.currentPage = self.pageControl.numberOfPages - 1
@@ -71,7 +88,12 @@ final class SlideViewController: UIViewController {
 
 	@IBAction func nextTapped(_ sender: UIBarButtonItem) {
 
-		// Turn into first page from last page
+		// Avoid execute while playing slideshow
+		guard !(self.isPlaying) else {
+			return
+		}
+
+		// When reach edge page, first page from last page
 		if self.pageControl.currentPage == self.pageControl.numberOfPages - 1 {
 
 			self.pageControl.currentPage = 0
@@ -99,8 +121,18 @@ final class SlideViewController: UIViewController {
 			// Auto slideshow starts , that display each slide every 2sec timer.
 			self.timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true, block: { (timer) in
 
-				// Call method that performs next button action
-				self.nextTapped(self.nextButton)
+				// When reach edge page, first page from last page
+				if self.pageControl.currentPage == self.pageControl.numberOfPages - 1 {
+
+					self.pageControl.currentPage = 0
+
+				} else {
+					// Normally go 1 page
+					self.pageControl.currentPage += 1
+				}
+
+				// Animate slide transition
+				self.updateSlide(animated: true, duration: 0.7, options: .transitionFlipFromRight)
 			})
 
 			// Disable to tap side buttons
