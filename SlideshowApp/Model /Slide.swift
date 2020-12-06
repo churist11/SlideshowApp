@@ -15,6 +15,19 @@ struct Slide {
 	internal var title: String
 	internal var image: UIImage
 
+	internal var imageInfo: String {
+		get {
+			// Convert size into string
+			let size = self.image.size
+			let stringSize = NSCoder.string(for: size)
+
+			// Add discription text
+			let processedSize = "{width, height} = \(stringSize)"
+
+			return processedSize
+		}
+	}
+
 	// MARK: - Initializer
 	init(page: Int, title: String,  image: UIImage) {
 		self.page = page
