@@ -25,11 +25,14 @@ final class ExpansionViewController: UIViewController {
         super.viewDidLoad()
 
 		// Set UI with values in slide that created in former VC
-//		self.expansionImageVIew.image = self.slide?.image
-//		self.navigationItem.title = self.slide?.title
+		self.expansionImageVIew.image = self.slide?.image ?? UIImage(systemName: Constants.REPLACE_SYSTEM_IMAGE)
+		self.navigationItem.title = self.slide?.title ?? "NIL"
 
-		// Close info view
+		// Hide info view
 		self.infoView.isHidden = true
+
+		// Place info text in label
+		self.infoLabel.text = self.slide?.imageInfo
 	}
 
 	@IBAction func infoPressed(_ sender: UIBarButtonItem) {

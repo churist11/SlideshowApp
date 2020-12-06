@@ -132,6 +132,17 @@ final class SlideViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
+		// Confirm segue id
+		if segue.identifier == Constants.SEGUE_ID {
+
+			// Get refernce to next screen
+			guard let expansionVC = segue.destination as? ExpansionViewController else {
+				return
+			}
+
+			// Set curren slide into destination
+			expansionVC.slide = self.model.slideContainer[self.pageControl.currentPage]
+		}
     }
 
 }// End
