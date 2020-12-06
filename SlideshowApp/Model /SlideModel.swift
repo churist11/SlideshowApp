@@ -16,7 +16,7 @@ struct SlideModel {
 	private var imageNameContainer = [String]()
 
 	// MARK: - Computed Property
-	internal var numberOfImages: Int {
+	internal var numberOfSlides: Int {
 		get {
 			return self.imageNameContainer.count
 		}
@@ -71,7 +71,7 @@ struct SlideModel {
 		self.imageNameContainer = imagefileNames
 
 		// Prepare slides for container
-		for i in 0 ..< self.numberOfImages {
+		for i in 0 ..< self.numberOfSlides {
 
 			// Assign each page number
 			self.currentIndex = i

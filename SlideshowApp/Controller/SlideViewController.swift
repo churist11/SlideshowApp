@@ -11,6 +11,7 @@ import UIKit
 final class SlideViewController: UIViewController {
 
 	// MARK: - IBOutlet
+	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var pageControl: UIPageControl!
 	@IBOutlet weak var previousButton: UIBarButtonItem!
@@ -29,13 +30,11 @@ final class SlideViewController: UIViewController {
         super.viewDidLoad()
 
 		// Configure page control status
-		self.pageControl.numberOfPages = self.model.numberOfImages
+		self.pageControl.numberOfPages = self.model.numberOfSlides
 		self.pageControl.currentPage = 0
 
-		// Set initial image to the image view
-		self.imageView.image = self.model.slideContainer[self.pageControl.currentPage].image
-
-		self.navigationItem.title = self.model.slideContainer[self.pageControl.currentPage].title
+		// Setup intial status
+		self.updateSlide()
     }
 
 	// MARK: - IBAction
@@ -50,6 +49,9 @@ final class SlideViewController: UIViewController {
 			// Normally back 1 page
 			self.pageControl.currentPage -= 1
 		}
+
+		// Animate slide transition
+		self.updateSlide(animated: true, duration: 0.7, options: .transitionFlipFromLeft)
 	}
 
 	@IBAction func nextTapped(_ sender: UIBarButtonItem) {
@@ -63,6 +65,9 @@ final class SlideViewController: UIViewController {
 			// Normally go 1 page
 			self.pageControl.currentPage += 1
 		}
+
+		// Animate slide transition
+		self.updateSlide(animated: true, duration: 0.7, options: .transitionFlipFromRight)
 	}
 
 	@IBAction func playTapped(_ sender: UIBarButtonItem) {
@@ -76,14 +81,14 @@ final class SlideViewController: UIViewController {
 		// Determine how Slide moves
 		if self.isPlaying {
 
-			// TODO: - Auto slideshow starts , that display each slide every 2sec
+			// TODO: - Auto slideshow animation starts , that display each slide every 2sec timer.
 
 			// Disable to tap side buttons
 			self.previousButton.isEnabled = false
 			self.nextButton.isEnabled = false
 		} else {
 			
-			// TODO: - Stop Slideshow and hold current slide to screen
+			// TODO: - Stop Slideshow, stop timer, and hold current slide to screen
 
 			// Enable to tap side buttons
 			self.previousButton.isEnabled = true
@@ -92,6 +97,35 @@ final class SlideViewController: UIViewController {
 	}
 
 	// MARK: - Instance Method
+
+	private func updateSlide(animated: Bool = false, duration animationDuration: TimeInterval? = nil, options animationOptions: UIView.AnimationOptions? = nil) -> Void {
+
+		if animated && animationDuration !=  nil, animationOptions != nil {
+			// <Animate>
+			// Animated transition
+			UIView.transition(with: self.imageView, duration: animationDuration!, options: animationOptions!, animations: {
+
+				// Update the image view to current status
+				self.imageView.image = self.model.slideContainer[self.pageControl.currentPage].image
+
+			}, completion: nil)
+
+			UIView.transition(with: self.titleLabel, duration: animationDuration!, options: animationOptions!, animations: {
+
+				// Set title provided by slide
+				self.titleLabel.text = self.model.slideContainer[self.pageControl.currentPage].title
+
+			}, completion: nil)
+
+		} else if !(animated) {
+			// <Not - animate>
+			// Set image provided by slide
+			self.imageView.image = self.model.slideContainer[self.pageControl.currentPage].image
+
+			// Set nvaigation title provided by slide
+			self.titleLabel.text = self.model.slideContainer[self.pageControl.currentPage].title
+		}
+	}
 
 
     // MARK: - Navigation
