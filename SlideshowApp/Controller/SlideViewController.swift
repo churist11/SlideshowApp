@@ -10,6 +10,7 @@ import UIKit
 
 final class SlideViewController: UIViewController {
 
+
 	// MARK: - IBOutlet
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var imageView: UIImageView!
@@ -20,12 +21,16 @@ final class SlideViewController: UIViewController {
 
 	@IBOutlet weak var tapGesture: UITapGestureRecognizer!
 
-	// MARK: - Property
-	private var model = SlideModel()
 
+	// MARK: - Property
+
+	private var model = SlideModel()
+	private var timer: Timer?
 	private var isPlaying: Bool = false
 
+
 	// MARK: - LifeCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +42,9 @@ final class SlideViewController: UIViewController {
 		self.updateSlide()
     }
 
+
 	// MARK: - IBAction
+
 	@IBAction func previousTapped(_ sender: UIBarButtonItem) {
 
 		// Turn into last page from first page
@@ -78,23 +85,31 @@ final class SlideViewController: UIViewController {
 		// Change status
 		self.isPlaying = !(self.isPlaying)
 
-		// Determine how Slide moves
+		// Check playing status , Determine how Slide moves
 		if self.isPlaying {
 
-			// TODO: - Auto slideshow animation starts , that display each slide every 2sec timer.
+			// Auto slideshow starts , that display each slide every 2sec timer.
+			self.timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true, block: { (timer) in
+
+				// Call method that performs next button action
+				self.nextTapped(self.nextButton)
+			})
 
 			// Disable to tap side buttons
 			self.previousButton.isEnabled = false
 			self.nextButton.isEnabled = false
 		} else {
 			
-			// TODO: - Stop Slideshow, stop timer, and hold current slide to screen
+			// Stop Slideshow, stop timer
+			self.timer?.invalidate()
+			self.timer = nil
 
 			// Enable to tap side buttons
 			self.previousButton.isEnabled = true
 			self.nextButton.isEnabled = true
 		}
 	}
+
 
 	// MARK: - Instance Method
 
@@ -144,6 +159,5 @@ final class SlideViewController: UIViewController {
 			expansionVC.slide = self.model.slideContainer[self.pageControl.currentPage]
 		}
     }
-
 }// End
 
