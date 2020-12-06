@@ -44,28 +44,28 @@
                                 </items>
                                 <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hgO-Rf-g79">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hgO-Rf-g79">
                                 <rect key="frame" x="0.0" y="88" width="414" height="749"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFH-cl-3tS" userLabel="Label Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdD-rA-uDI">
-                                                <rect key="frame" x="52" y="54" width="310.5" height="36"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <rect key="frame" x="41.5" y="51" width="331" height="48"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                 <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="bdD-rA-uDI" firstAttribute="width" secondItem="xFH-cl-3tS" secondAttribute="width" multiplier="0.75" id="5wp-av-Hba"/>
+                                            <constraint firstItem="bdD-rA-uDI" firstAttribute="width" secondItem="xFH-cl-3tS" secondAttribute="width" multiplier="0.8" id="5wp-av-Hba"/>
                                             <constraint firstItem="bdD-rA-uDI" firstAttribute="centerY" secondItem="xFH-cl-3tS" secondAttribute="centerY" id="HQf-ft-fbK"/>
                                             <constraint firstItem="bdD-rA-uDI" firstAttribute="centerX" secondItem="xFH-cl-3tS" secondAttribute="centerX" id="ZS9-p4-VMS"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-Wg-2EJ">
-                                        <rect key="frame" x="0.0" y="152" width="414" height="415"/>
+                                        <rect key="frame" x="0.0" y="167" width="414" height="415"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="b9G-Wg-2EJ" secondAttribute="height" multiplier="373:374" id="NL1-RL-wRE"/>
@@ -75,35 +75,35 @@
                                         </connections>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bx7-gO-QKd" userLabel="Dot Container">
-                                        <rect key="frame" x="0.0" y="575" width="414" height="174"/>
+                                        <rect key="frame" x="0.0" y="599" width="414" height="150"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="dem-fQ-npo">
-                                                <rect key="frame" x="145" y="68.5" width="124" height="37"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="41.5" y="56.5" width="331" height="37"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="pageIndicatorTintColor" red="0.98857868020304573" green="0.98857868020304573" blue="0.98857868020304573" alpha="0.75037457191780821" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="currentPageIndicatorTintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="dem-fQ-npo" firstAttribute="centerX" secondItem="bx7-gO-QKd" secondAttribute="centerX" id="9Wy-Mv-EbG"/>
                                             <constraint firstItem="dem-fQ-npo" firstAttribute="centerY" secondItem="bx7-gO-QKd" secondAttribute="centerY" id="YhQ-Wz-38z"/>
-                                            <constraint firstItem="dem-fQ-npo" firstAttribute="width" secondItem="bx7-gO-QKd" secondAttribute="width" multiplier="0.3" id="zeN-5m-9rH"/>
+                                            <constraint firstItem="dem-fQ-npo" firstAttribute="width" secondItem="bx7-gO-QKd" secondAttribute="width" multiplier="0.8" id="zeN-5m-9rH"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="bx7-gO-QKd" firstAttribute="height" secondItem="b9G-Wg-2EJ" secondAttribute="height" multiplier="0.419277" id="8NX-Rf-vaC"/>
-                                    <constraint firstItem="xFH-cl-3tS" firstAttribute="height" secondItem="b9G-Wg-2EJ" secondAttribute="height" multiplier="0.346988" id="pU4-OR-z8D"/>
+                                    <constraint firstItem="bx7-gO-QKd" firstAttribute="height" secondItem="hgO-Rf-g79" secondAttribute="height" multiplier="0.2" id="8NX-Rf-vaC"/>
+                                    <constraint firstItem="xFH-cl-3tS" firstAttribute="height" secondItem="hgO-Rf-g79" secondAttribute="height" multiplier="0.2" id="pU4-OR-z8D"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hgO-Rf-g79" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="40m-Ou-94a"/>
-                            <constraint firstItem="Km0-Iq-UfT" firstAttribute="top" secondItem="hgO-Rf-g79" secondAttribute="bottom" id="74V-I4-T1c"/>
-                            <constraint firstItem="hgO-Rf-g79" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cRe-Ss-wnY"/>
-                            <constraint firstItem="hgO-Rf-g79" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lML-TB-V65"/>
+                            <constraint firstItem="hgO-Rf-g79" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QXs-ij-g2j"/>
+                            <constraint firstItem="hgO-Rf-g79" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b0J-EB-Ugd"/>
+                            <constraint firstItem="hgO-Rf-g79" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kw0-nV-fVL"/>
+                            <constraint firstItem="Km0-Iq-UfT" firstAttribute="top" secondItem="hgO-Rf-g79" secondAttribute="bottom" id="plg-NS-xJ9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

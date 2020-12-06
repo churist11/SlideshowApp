@@ -42,6 +42,14 @@ final class SlideViewController: UIViewController {
 		self.updateSlide()
     }
 
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+
+		// Set up UI
+		self.navigationItem.largeTitleDisplayMode = .always
+		self.navigationItem.title = "Choose your hamster"
+	}
+
 
 	// MARK: - IBAction
 
